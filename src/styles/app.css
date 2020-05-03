@@ -1,0 +1,47 @@
+@import './reset.css';
+@import './variables.css';
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* @font-face {
+  font-family: "";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../static/fonts/");
+} */
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-1);
+  font-size: var(--fontsize--1);
+  line-height: var(--line-height);
+  letter-spacing: var(--spacing);
+  -webkit-font-smoothing: antialiased;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+p {
+}
+
+span {
+}
+
+main {
+}
+
+@media (max-width: 768px) {
+}

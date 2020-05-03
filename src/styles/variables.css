@@ -1,0 +1,33 @@
+:root {
+  /* Colors */
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --white-80: #444444;
+  --highlight: #0026ff;
+  /* Document Colors */
+  --bg-color: var(--black);
+  --text-color: var(--white);
+  --highlight-color: var(--highlight);
+
+  /* Spacing */
+  --spacing-1: 1rem;
+  --spacing-2: 2rem;
+  --spacing-3: 3rem;
+  --spacing-4: 5rem;
+  --spacing-5: 8rem;
+  --spacing-6: 13rem;
+
+  /* Fonts */
+  --font-1: '', sans-serif;
+  --font-2: '', serif;
+  /* Font Sizes */
+  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+  --fontsize-1: calc(75px + (150 - 75) * (100vw - 375px) / (1440 - 375));
+  --fontsize-2: calc(13px + (26 - 13) * (100vw - 375px) / (1440 - 375));
+  /* Font Options */
+  --font-weight: 300;
+  --line-height: 1.1;
+  --spacing: 0.5px;
+
+  /* Misc */
+}
