@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import Footer from './footer';
 import '../styles/app.css';
 
 const Layout = ({ children, description, lang, meta, title }) => {
@@ -48,7 +47,6 @@ const Layout = ({ children, description, lang, meta, title }) => {
       />
 
       <main>{children}</main>
-      <Footer />
     </>
   );
 };
