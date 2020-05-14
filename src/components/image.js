@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 // eslint-disable-next-line
 import useResizeObserver from 'use-resize-observer';
 
@@ -16,21 +16,18 @@ const Image = ({ image, handlePan }) => {
   });
 
   return (
-    <AnimatePresence>
-      <StyledImageWrapper
-        ref={ref}
-        style={{ height: windowHeight }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-        exit={{ opacity: 0 }}
-        onPanStart={handlePan}
-      >
-        <StyledImage>
-          <Img fluid={image} loading="eager" />
-        </StyledImage>
-      </StyledImageWrapper>
-    </AnimatePresence>
+    <StyledImageWrapper
+      ref={ref}
+      style={{ height: windowHeight }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.33 }}
+      onPanEnd={handlePan}
+    >
+      <StyledImage>
+        <Img fluid={image} loading="eager" />
+      </StyledImage>
+    </StyledImageWrapper>
   );
 };
 
