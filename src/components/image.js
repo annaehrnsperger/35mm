@@ -13,7 +13,7 @@ const Image = ({ image }) => (
       exit={{ opacity: 0 }}
     >
       <StyledImage>
-        <Img fluid={image} />
+        <Img fluid={image} loading="eager" />
       </StyledImage>
     </StyledImageWrapper>
   </AnimatePresence>

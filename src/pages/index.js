@@ -59,20 +59,13 @@ const IndexPage = () => {
         onWheel={handleScroll}
         onTouchStart={handleNext}
       >
-        <StyledControls>
-          <button type="button" className="prev" onClick={handlePrev}>
-            ↑
-          </button>
-          <button type="button" className="next" onClick={handleNext}>
-            ↓
-          </button>
-        </StyledControls>
+        <button type="button" className="prev" onClick={handlePrev}>
+          ↑
+        </button>
         <Image key={current} image={edges[current].node.fluid} />
-        <div hidden>
-          {edges.map(edge => (
-            <Image key={edge.node.id} image={edge.node.fluid} />
-          ))}
-        </div>
+        <button type="button" className="next" onClick={handleNext}>
+          ↓
+        </button>
       </StyledSlider>
     </Layout>
   );
@@ -81,16 +74,14 @@ const IndexPage = () => {
 const StyledSlider = styled.div`
   width: 100vw;
   position: relative;
-`;
-
-const StyledControls = styled.div`
-  z-index: 100;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   .next {
     position: fixed;
     bottom: 0;
   }
   button {
+    z-index: 100;
     width: 100vw;
     height: 5vw;
     text-align: center;
@@ -99,4 +90,5 @@ const StyledControls = styled.div`
     }
   }
 `;
+
 export default IndexPage;
