@@ -64,7 +64,7 @@ const IndexPage = () => {
   );
 };
 
-const StyledSlider = styled.div`
+const StyledSlider = styled.section`
   width: 100vw;
   position: relative;
   display: flex;
