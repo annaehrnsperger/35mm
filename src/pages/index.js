@@ -26,19 +26,15 @@ const IndexPage = () => {
 
   const [current, setCurrent] = useState(lastImage);
 
-  const delay = 150;
+  // const delay = 150;
 
   const handleScroll = e => {
     const direction = e.deltaY;
 
     if (direction > 0) {
-      return current === 0
-        ? setTimeout(() => setCurrent(lastImage), delay)
-        : setTimeout(() => setCurrent(current - 1), delay);
+      return current === 0 ? setCurrent(lastImage) : setCurrent(current - 1);
     }
-    return current === lastImage
-      ? setTimeout(() => setCurrent(0), delay)
-      : setTimeout(() => setCurrent(current + 1), delay);
+    return current === lastImage ? setCurrent(0) : setCurrent(current + 1);
   };
 
   const handleNext = () =>
@@ -48,7 +44,7 @@ const IndexPage = () => {
     current === lastImage ? setCurrent(0) : setCurrent(current + 1);
 
   const handlePan = (e, info) =>
-    info.delta.x > 0 || info.delta.y > 0 ? handleNext() : handlePrev();
+    info.delta.x > 0 || info.delta.y > 0 ? handlePrev() : handleNext();
 
   return (
     <Layout>
