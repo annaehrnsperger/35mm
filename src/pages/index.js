@@ -14,6 +14,7 @@ const IndexPage = () => {
             fluid(maxWidth: 3600) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
             }
+            id
           }
         }
       }
@@ -45,11 +46,6 @@ const IndexPage = () => {
       : setTimeout(() => setCurrent(current + 1), delay);
   };
 
-  const handleTouch = () =>
-    current === 0
-      ? setInterval(() => setCurrent(lastImage), 10)
-      : setInterval(() => setCurrent(current - 1), 10);
-
   const handleNext = () =>
     current === 0 ? setCurrent(lastImage) : setCurrent(current - 1);
 
@@ -61,17 +57,22 @@ const IndexPage = () => {
       <StyledSlider
         style={{ height: windowHeight }}
         onWheel={handleScroll}
-        onTouchMove={handleTouch}
+        onTouchStart={handleNext}
       >
         <StyledControls>
-          <button type="button" onClick={handlePrev}>
+          <button type="button" className="prev" onClick={handlePrev}>
             ↑
           </button>
-          <button type="button" onClick={handleNext}>
+          <button type="button" className="next" onClick={handleNext}>
             ↓
           </button>
         </StyledControls>
         <Image key={current} image={edges[current].node.fluid} />
+        <div hidden>
+          {edges.map(edge => (
+            <Image key={edge.node.id} image={edge.node.fluid} />
+          ))}
+        </div>
       </StyledSlider>
     </Layout>
   );
@@ -84,11 +85,11 @@ const StyledSlider = styled.div`
 
 const StyledControls = styled.div`
   z-index: 100;
-  display: flex;
   position: absolute;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
+  .next {
+    position: fixed;
+    bottom: 0;
+  }
   button {
     width: 100vw;
     height: 5vw;
