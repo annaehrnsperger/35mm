@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Analog Photography`,
-    description: `Analog Photography`,
+    description: `A collection of my analog photographs`,
     author: `Anna Ehrnsperger`,
   },
   plugins: [

@@ -2,6 +2,8 @@
 
 ## 🔗 35mm.annaehrnsperger.de
 
+A collection of my analog photographs
+
 ### Start developing
 
 ```
