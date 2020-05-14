@@ -22,7 +22,7 @@ const Image = ({ image, handlePan }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.33 }}
-      onPanEnd={handlePan}
+      onPan={handlePan}
     >
       <StyledImage>
         <Img fluid={image} loading="eager" />

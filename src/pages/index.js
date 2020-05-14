@@ -44,7 +44,7 @@ const IndexPage = () => {
     current === lastImage ? setCurrent(0) : setCurrent(current + 1);
 
   const handlePan = (e, info) =>
-    info.delta.x > 0 || info.delta.y > 0 ? handlePrev() : handleNext();
+    info.offset.x > 0 || info.offset.y > 0 ? handlePrev() : handleNext();
 
   return (
     <Layout>
