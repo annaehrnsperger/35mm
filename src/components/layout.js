@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import Header from './header';
 import Footer from './footer';
 import '../styles/app.css';
 
@@ -48,7 +47,6 @@ const Layout = ({ children, description, lang, meta, title }) => {
         ].concat(meta)}
       />
 
-      <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Footer />
     </>

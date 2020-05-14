@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `A blank theme for Gatsby.`,
+    title: `Analog Photography`,
+    description: `Analog Photography`,
     author: `Anna Ehrnsperger`,
   },
   plugins: [

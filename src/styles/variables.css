@@ -18,8 +18,7 @@
   --spacing-6: 13rem;
 
   /* Fonts */
-  --font-1: '', sans-serif;
-  --font-2: '', serif;
+  --font-1: 'Helvetica', sans-serif;
   /* Font Sizes */
   /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
   --fontsize-1: calc(75px + (150 - 75) * (100vw - 375px) / (1440 - 375));

@@ -1,23 +1,42 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const Image = () => {
-  const { file } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 3600) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-  // without blur
-  // ...GatsbyImageSharpFluid_noBase64
+const Image = ({ image }) => (
+  <AnimatePresence>
+    <StyledImageWrapper
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+      exit={{ opacity: 0 }}
+    >
+      <StyledImage>
+        <Img fluid={image} />
+      </StyledImage>
+    </StyledImageWrapper>
+  </AnimatePresence>
+);
 
-  return <Img fluid={file.childImageSharp.fluid} />;
+const StyledImageWrapper = styled(motion.div)`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background: var(--pink);
+  position: absolute;
+`;
+
+const StyledImage = styled.div`
+  width: 50vw;
+  margin: auto;
+  @media (max-width: 1024px) {
+    width: 75vw;
+  }
+`;
+
+Image.propTypes = {
+  image: PropTypes.object,
 };
 
 export default Image;

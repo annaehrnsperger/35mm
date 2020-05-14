@@ -12,13 +12,6 @@
   box-sizing: border-box;
 }
 
-/* @font-face {
-  font-family: "";
-  font-weight: 300;
-  font-style: normal;
-  src: url("../static/fonts/");
-} */
-
 html {
   height: 100%;
 }
@@ -32,16 +25,5 @@ body {
   -webkit-font-smoothing: antialiased;
   background: var(--primary-color);
   color: var(--secondary-color);
-}
-
-p {
-}
-
-span {
-}
-
-main {
-}
-
-@media (max-width: 768px) {
+  overflow: hidden;
 }

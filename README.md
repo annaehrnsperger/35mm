@@ -1,9 +1,6 @@
-# 🏁 Gatsby Default Theme
+# Analog Photography
 
-A blank theme for Gatsby using
-
-- Styled Components
-- Wes Bos No-Sweat™ Eslint and Prettier Setup
+## 🔗 35mm.annaehrnsperger.de
 
 ### Start developing
 
