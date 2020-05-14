@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -20,11 +20,6 @@ const IndexPage = () => {
       }
     }
   `);
-
-  const [windowHeight, setWindowHeight] = useState(0);
-
-  useEffect(() => setWindowHeight(window.innerHeight), []);
-
   const { edges } = data.allImageSharp;
   const images = edges.map(edge => edge.node.fluid);
   const lastImage = images.length - 1;
@@ -52,17 +47,20 @@ const IndexPage = () => {
   const handlePrev = () =>
     current === lastImage ? setCurrent(0) : setCurrent(current + 1);
 
+  const handlePan = (e, info) =>
+    info.delta.x > 0 || info.delta.y > 0 ? handleNext() : handlePrev();
+
   return (
     <Layout>
-      <StyledSlider
-        style={{ height: windowHeight }}
-        onWheel={handleScroll}
-        onTouchStart={handleNext}
-      >
+      <StyledSlider onWheel={handleScroll}>
         <button type="button" className="prev" onClick={handlePrev}>
           ↑
         </button>
-        <Image key={current} image={edges[current].node.fluid} />
+        <Image
+          key={current}
+          image={edges[current].node.fluid}
+          handlePan={handlePan}
+        />
         <button type="button" className="next" onClick={handleNext}>
           ↓
         </button>
