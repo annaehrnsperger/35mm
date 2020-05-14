@@ -26,8 +26,6 @@ const IndexPage = () => {
 
   const [current, setCurrent] = useState(lastImage);
 
-  // const delay = 150;
-
   const handleScroll = e => {
     const direction = e.deltaY;
 
@@ -36,7 +34,6 @@ const IndexPage = () => {
     }
     return current === lastImage ? setCurrent(0) : setCurrent(current + 1);
   };
-
   const handleNext = () =>
     current === 0 ? setCurrent(lastImage) : setCurrent(current - 1);
 
@@ -46,6 +43,7 @@ const IndexPage = () => {
   const handlePan = (e, info) =>
     info.offset.x > 0 || info.offset.y > 0 ? handlePrev() : handleNext();
 
+  const handleTouch = () => handleNext();
   return (
     <Layout>
       <StyledSlider onWheel={handleScroll}>
@@ -56,6 +54,7 @@ const IndexPage = () => {
           key={current}
           image={edges[current].node.fluid}
           handlePan={handlePan}
+          handleToch={handleTouch}
         />
         <button type="button" className="next" onClick={handleNext}>
           ↓

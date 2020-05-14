@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 // eslint-disable-next-line
 import useResizeObserver from 'use-resize-observer';
 
-const Image = ({ image, handlePan }) => {
+const Image = ({ image, handlePan, handleTouch }) => {
   const [windowHeight, setWindowHeight] = useState(0);
 
   const { ref } = useResizeObserver({
@@ -23,6 +23,7 @@ const Image = ({ image, handlePan }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.33 }}
       onPan={handlePan}
+      onTouchStart={handleTouch}
     >
       <StyledImage>
         <Img fluid={image} loading="eager" />
@@ -48,6 +49,7 @@ const StyledImage = styled.div`
 Image.propTypes = {
   image: PropTypes.object,
   handlePan: PropTypes.func,
+  handleTouch: PropTypes.func,
 };
 
 export default Image;
