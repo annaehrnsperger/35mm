@@ -54,7 +54,7 @@ const IndexPage = () => {
           key={current}
           image={edges[current].node.fluid}
           handlePan={handlePan}
-          handleToch={handleTouch}
+          handleTouch={handleTouch}
         />
         <button type="button" className="next" onClick={handleNext}>
           ↓

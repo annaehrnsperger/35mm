@@ -23,7 +23,7 @@ const Image = ({ image, handlePan, handleTouch }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.33 }}
       onPan={handlePan}
-      onTouchStart={handleTouch}
+      onTap={handleTouch}
     >
       <StyledImage>
         <Img fluid={image} loading="eager" />
