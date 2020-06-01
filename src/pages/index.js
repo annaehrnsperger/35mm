@@ -12,7 +12,7 @@ const IndexPage = () => {
         edges {
           node {
             fluid(maxWidth: 3600) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
             id
           }
